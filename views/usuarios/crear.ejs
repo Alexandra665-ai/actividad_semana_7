@@ -1,0 +1,18 @@
+<h2>Crear Usuario</h2>
+<form action="/usuarios/guardar" method="POST">
+  <label>RUT:</label><br>
+  <input type="text" name="rut" required><br>
+  <label>Nombre:</label><br>
+  <input type="text" name="nombre" required><br>
+  <label>Email:</label><br>
+  <input type="email" name="email" required><br>
+  <label>Clave:</label><br>
+  <input type="text" name="clave" required><br>
+  <label>Rol:</label><br>
+  <select name="rol_id">
+    <% roles.forEach(r => { %>
+      <option value="<%= r.id %>"><%= r.nombre %></option>
+    <% }) %>
+  </select><br><br>
+  <button type="submit">Guardar</button>
+</form>

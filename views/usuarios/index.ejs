@@ -1,0 +1,17 @@
+<h2>Listado de Usuarios</h2>
+<a href="/usuarios/crear">Nuevo Usuario</a>
+<table>
+  <tr><th>RUT</th><th>Nombre</th><th>Email</th><th>Rol</th><th>Acciones</th></tr>
+  <% usuarios.forEach(u => { %>
+    <tr>
+      <td><%= u.rut %></td>
+      <td><%= u.nombre %></td>
+      <td><%= u.email %></td>
+      <td><%= u.rol %></td>
+      <td>
+        <a href="/usuarios/editar/<%= u.rut %>">Editar</a> |
+        <a href="/usuarios/eliminar/<%= u.rut %>">Eliminar</a>
+      </td>
+    </tr>
+  <% }) %>
+</table>
